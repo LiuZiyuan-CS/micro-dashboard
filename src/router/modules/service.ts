@@ -7,15 +7,25 @@ const service: RouteRecordRaw = {
   component: MAIN_LAYOUT,
   children: [
     {
-      path: 'list',
+      path: 'serviceList',
       name: 'ServiceList',
       component: () => import('@/pages/service/ServiceList.vue'),
       meta: {
         requireAuth: true,
-        locale: '服务列表',
+        locale: '服务中心',
+      },
+    },
+    {
+      path: 'instanceList',
+      name: 'InstanceList',
+      component: () => import('@/pages/service/InstanceList.vue'),
+      meta: {
+        requireAuth: true,
+        locale: '实例中心',
       },
     },
   ],
+  
   meta: { requireAuth: true, locale: '服务管理', icon: 'icon-common' },
 };
 

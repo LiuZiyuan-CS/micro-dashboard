@@ -47,13 +47,13 @@ function timePickerOnOk(dateString: any, date: any) {
             </Col>
             <Col :span="5">
             <FormItem field="ip" label="IP地址">
-              <Input v-model="form.ip" placeholder="请输入数据库地址" />
+              <Input v-model="form.ip" placeholder="请输入IP地址" />
             </FormItem>
             </Col>
             <Col :span="8">
             <FormItem field="startTime" label="启动时间">
               <RangePicker style="width: 500px; margin: 0 24px 24px 0;" show-time
-                :time-picker-props="{ defaultValue: ['00:00:00', '09:09:06'] }" format="YYYY-MM-DD HH:mm"
+                :time-picker-props="{ defaultValue: ['00:00:00', '00:00:00'] }" format="YYYY-MM-DD HH:mm:ss"
                 @change="timePickerOnChange" @select="timePickerOnSelect" @ok="timePickerOnOk" />
             </FormItem>
             </Col>
