@@ -10,22 +10,22 @@ const form = reactive({
   startTime: false,
 })
 
-const handleSearch = () => {
+const handleServiceSearch = () => {
 
 }
-const handleFromReset = () => {
+const handleFormReset = () => {
 
 }
 
-function onSelect(dateString: any, date: any) {
+function timePickerOnSelect(dateString: any, date: any) {
   console.log('onSelect', dateString, date);
 }
 
-function onChange(dateString: any, date: any) {
+function timePickerOnChange(dateString: any, date: any) {
   console.log('onChange: ', dateString, date);
 }
 
-function onOk(dateString: any, date: any) {
+function timePickerOnOk(dateString: any, date: any) {
   console.log('onOk: ', dateString, date);
 }
 
@@ -54,7 +54,7 @@ function onOk(dateString: any, date: any) {
             <FormItem field="startTime" label="启动时间">
               <RangePicker style="width: 500px; margin: 0 24px 24px 0;" show-time
                 :time-picker-props="{ defaultValue: ['00:00:00', '09:09:06'] }" format="YYYY-MM-DD HH:mm"
-                @change="onChange" @select="onSelect" @ok="onOk" />
+                @change="timePickerOnChange" @select="timePickerOnSelect" @ok="timePickerOnOk" />
             </FormItem>
             </Col>
           </Row>
@@ -63,13 +63,13 @@ function onOk(dateString: any, date: any) {
         <Divider style="height: 34px" direction="vertical" />
         <Col :flex="'86px'" style="text-align: right">
         <Space :size="18">
-          <Button type="primary" @click="handleSearch">
+          <Button type="primary" @click="handleServiceSearch">
             <template #icon>
               <IconSearch />
             </template>
             搜索
           </Button>
-          <Button @click="handleFromReset">
+          <Button @click="handleFormReset">
             <template #icon>
               <IconRefresh />
             </template>
