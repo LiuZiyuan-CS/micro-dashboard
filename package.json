@@ -29,6 +29,7 @@
     "@types/nprogress": "^0.2.0",
     "@vueuse/core": "^9.4.0",
     "axios": "^0.27.2",
+    "echarts": "^5.4.0",
     "nprogress": "^0.2.0",
     "vue": "^3.2.41",
     "vue-router": "^4.1.6"
