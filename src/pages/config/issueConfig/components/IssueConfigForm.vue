@@ -3,12 +3,12 @@ import { Spin, Form, FormItem, Input, Button, Select, Option } from '@arco-desig
 import { FormInstance } from '@arco-design/web-vue/es/form';
 import { useAxios } from '@vueuse/integrations/useAxios';
 import { Codemirror } from 'vue-codemirror';
-import {json}from '@codemirror/lang-json'
+import { json } from '@codemirror/lang-json';
 
 import { instance } from '@/api';
 import { CONFIG_URL } from '@/api/url';
 
-const extensions=[json()]
+const extensions = [json()];
 
 const emit = defineEmits<{
   (e: 'change-step', idx: number): void;
@@ -33,7 +33,7 @@ const handleSubmit = async () => {
   if (res) {
     return;
   }
-  formData.content=JSON.stringify(formData.content);
+  formData.content = JSON.stringify(formData.content);
   execute({
     data: {
       ...formData,
@@ -52,13 +52,14 @@ const handleSubmit = async () => {
         <Input v-model="formData.dataID" placeholder="请输入配置文件名" />
       </FormItem>
       <FormItem field="content" label="配置内容" :rules="[{ required: true, message: '必填' }]">
-        <Codemirror :style="{ width:'100%', height: '360px', background: '#D4D4D4' }"
-        v-model="formData.content"
-        placeholder="请在此处输入配置内容（Json）..."
-        :autofocus="true"
-        :indent-with-tab="true"
-        :tab-size="2"
-        :extensions="extensions"
+        <Codemirror
+          :style="{ width: '100%', height: '360px', background: '#D4D4D4' }"
+          v-model="formData.content"
+          placeholder="请在此处输入配置内容（Json）..."
+          :autofocus="true"
+          :indent-with-tab="true"
+          :tab-size="2"
+          :extensions="extensions"
         ></Codemirror>
       </FormItem>
       <FormItem field="type" label="类型" :rules="[{ required: true, message: '必填' }]">

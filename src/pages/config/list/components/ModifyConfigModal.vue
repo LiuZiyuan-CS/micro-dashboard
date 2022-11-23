@@ -5,9 +5,9 @@ import { Form, FormItem, Input, Modal, Select, Option } from '@arco-design/web-v
 import { useAxios } from '@vueuse/integrations/useAxios';
 import { useTableStore, useModifyConfigModalStore } from '../hooks';
 import { Codemirror } from 'vue-codemirror';
-import {json}from '@codemirror/lang-json'
+import { json } from '@codemirror/lang-json';
 
-const extensions=[json()]
+const extensions = [json()];
 const { refreshList } = useTableStore()!;
 
 const { modifyModalVisible, ModifyForm } = useModifyConfigModalStore()!;
@@ -28,23 +28,26 @@ const handleBeforeOk = async (dataID: string, content: string, type: number) => 
 };
 </script>
 <template>
-  <Modal  width="800px" ok-text="修改并发布" v-model:visible="modifyModalVisible"
-    @ok="handleBeforeOk(ModifyForm.dataId, ModifyForm.content, parseInt(ModifyForm.type))">
-    <template #title>
-      修改配置
-    </template>
+  <Modal
+    width="800px"
+    ok-text="修改并发布"
+    v-model:visible="modifyModalVisible"
+    @ok="handleBeforeOk(ModifyForm.dataId, ModifyForm.content, parseInt(ModifyForm.type))"
+  >
+    <template #title> 修改配置 </template>
     <Form v-model:model="ModifyForm">
       <FormItem field="dataID" label="配置属性">
         <Input v-model="ModifyForm.dataId" />
       </FormItem>
       <FormItem field="content" label="配置内容">
-        <Codemirror :style="{ width:'100%', height: '360px', background: '#D4D4D4' }"
-        v-model="ModifyForm.content"
-        placeholder="请在此处输入配置内容（Json）..."
-        :autofocus="true"
-        :indent-with-tab="true"
-        :tab-size="2"
-        :extensions="extensions"
+        <Codemirror
+          :style="{ width: '100%', height: '360px', background: '#D4D4D4' }"
+          v-model="ModifyForm.content"
+          placeholder="请在此处输入配置内容（Json）..."
+          :autofocus="true"
+          :indent-with-tab="true"
+          :tab-size="2"
+          :extensions="extensions"
         ></Codemirror>
       </FormItem>
       <FormItem field="type" label="类型">
