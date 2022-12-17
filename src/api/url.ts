@@ -13,3 +13,9 @@ export const CONFIG_APPROVE_URL = `${v1}/config/approve`;
 export const CONFIG_APPROVE_PUBLISH_URL = `${v1}/config/approve/publish`;
 
 export const CONFIG_APPROVE_DELETE_URL = `${v1}/config/approve/delete`;
+
+export const VISIBLE_URL = `${v1}/visible`;
+
+export const USERLIST_URL = `${v1}/userList`;
+//参考数据库连接
+export const CONNECT_URL = `${v1}/connect`;

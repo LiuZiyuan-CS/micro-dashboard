@@ -29,7 +29,7 @@ export interface ConfigListItem {
   dataId: string;
   type: string;
   createAt: string;
-  updateAt:string;
+  updateAt: string;
   user: UserInfo;
 }
 
@@ -38,3 +38,30 @@ export interface ConfigListData {
   data: ConfigListItem[];
 }
 
+export interface UserListItem {
+  userConnectUuid: string;
+  ip: string;
+  port: string;
+  exportIp: string;
+  exportPort: string;
+  visible: number;
+  deletable: number;
+}
+
+export interface UserListData {
+  count: number;
+  data: UserListItem[];
+}
+
+export interface UserDataParams {
+  //userUuid: string;
+  userName: string;
+}
+export interface UserData {
+  data: UserDataParams[];
+}
+
+//参考数据库连接操作
+export interface GetConnectListParams {
+  type?: 1 | 2 | 3 | 4 | 5 | 6;
+}
